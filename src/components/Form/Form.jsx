@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { Form, LabelForm, LabelInput, ButtonSubmit } from './Form.styled';
 import { nanoid } from 'nanoid';
 
-const ContactsForm = () => {
+export default function ContactsForm ({onSubmit}) {
   const [name, setName] = useState('');
   const [id, setId] = useState('');
   const [number, setNumber] = useState('');
@@ -29,8 +29,7 @@ const ContactsForm = () => {
 
   const SubmitForm = e => {
     e.preventDefault();
-    //onSubmit({name, id, number});
-    console.log('submit form')
+    onSubmit({name, id, number});
     DefaultValue();
   }
 
@@ -138,4 +137,4 @@ const ContactsForm = () => {
   //}
 // }
 
-export default ContactsForm;
+// export default ContactsForm;
